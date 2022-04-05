@@ -1,0 +1,36 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Sorteador {
+
+    public static void main(String[] args) {
+        String fecharPrograma;
+        /*Loop do sorteador*/
+        do {
+            System.out.println("---------------------------------------------------------------------------");
+            System.out.println("|      Bem vindo(a) ao gerador de números aleatórios com intervalor!      |");
+            System.out.println("---------------------------------------------------------------------------");
+            System.out.println("Digitar o primeiro e o último número inteiro do intervalo que deseja sortear?");
+            
+            Scanner intervalo = new Scanner(System.in);
+            int numeroInicial = intervalo.nextInt();
+            int numeroFinal = intervalo.nextInt();
+
+            System.out.println("Digite quantos números deseja sortear: ");
+            Scanner repeticaoSorteado = new Scanner(System.in);
+            int repeticao = repeticaoSorteado.nextInt();
+            // incrementar mais números sorteados
+
+            int contador = 0;
+            Random aleatorio = new Random();
+            while (contador != repeticao) {
+                contador++;
+                int valor = aleatorio.nextInt(numeroInicial + numeroFinal);
+                System.out.println("Número(s) gerado(s): " + valor);
+            }
+            System.out.println("Digite 's' + Enter se deseja sair e qualquer outra letra + Enter para continuar sorteando.");
+            Scanner entrada = new Scanner(System.in);
+            fecharPrograma = entrada.nextLine();
+        } while (!fecharPrograma.equals("s"));
+    }
+}

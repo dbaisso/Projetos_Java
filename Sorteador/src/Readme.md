@@ -1,0 +1,1 @@
+Projeto de sorteador de números aleatórios com qualquer intervalo. 
